@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sunny Yoga</title>
+
+    <!--jQuery-->
+    <script src="common/jquery-3.1.1.min.js"></script>
+
+    <!--jQueryColor-->
+    <script src="common/jquery.color.js"></script>
+
+    <!--Bootstrap-->
+    <link href="common/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="common/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <script src="common/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="common/bootstrap-3.3.7-dist/js/npm.js"></script>
+
+
+    <!--fancybox-->
+    <link href="common/fancybox-3.0/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+    <script src="common/fancybox-3.0/jquery.fancybox.min.js"></script>
+
+    <!--main-->
+
+    <style>
+        /*--global--*/
+        body , html{
+            font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+            background-color: #fcfcfc;
+        }
+
+        .hr-12{
+            width: 100%;
+            height: 12px;
+            clear: both;
+        }
+
+        .hr-30{
+            width: 100%;
+            height: 30px;
+            clear: both;
+        }
+        .mb-30{
+            margin-bottom: 30px;
+        }
+
+        a:hover{
+            text-decoration: none;
+        }
+
+        /*--header--*/
+        .header-bg{
+            background-color: #5a6e4b;
+            padding-top: 10px;
+        }
+        .header{
+            border-top: 1px solid #ffffff;
+            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+            background-color: #819b6c;
+            display: table;
+            width: 100%;
+        }
+        .brand-logo{
+            float: left;
+            line-height: 36px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .menu{
+            float: right;
+            display: table;
+        }
+        .side-left{
+            display: inline-block;
+            float: left;
+            margin-right: 5px ;
+        }
+        .side-right{
+            display: inline-block;
+            float: right;
+        }
+        .btn-icon{
+            line-height: 30px;
+            transition: all 1s;
+            transform: rotate(0deg);
+        }
+        .btn-icon.rotate-on{
+            transform: rotate(360deg);
+        }
+        .btn-icon-1{
+            background: url("img/icon-1.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .btn-icon-2{
+            background: url("img/icon-2.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .btn-icon-3{
+            background: url("img/icon-3.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .btn-icon-4{
+            background: url("img/icon-4.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .btn-icon-5{
+            background: url("img/icon-5.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .btn-icon-6{
+            background: url("img/icon-6.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .menu-btn{
+            font-size: 14px;
+            padding: 18px 10px;
+            color: #ffffff;
+            display: inline-table;
+            line-height: 15px;
+            cursor: pointer;
+        }
+        .menu-btn-en{
+            font-size: 10px;
+            -webkit-transform:scale(0.83);
+            color: #ffffff;
+            display: inline-block;
+            margin-left: -3px;
+        }
+
+        /*--AD--*/
+        .ad-area{
+            height: 200px;
+            background-position: center center;
+            background-size: cover;
+        }
+        .ad-1{
+            background-image: url("img/ad-1.jpg");
+        }
+        .ad-2{
+            background-image: url("img/ad-2.jpg");
+        }
+        .ad-6{
+            background-image: url("img/ad-6.jpg");
+        }
+
+        /*--main container-*/
+        .container{
+            background-color: #ffffff;
+        }
+        .main-wrapper{
+            padding-top: 20px;
+        }
+        .title-tw{
+            color: #5a6e4b;
+            font-size: 16px;
+            line-height: 17px;
+            display: inline-block;
+            font-weight: 900;
+        }
+        .title-en{
+            font-size: 12px;
+            -webkit-transform:scale(0.83);
+            color: #5a6e4b;
+            display: inline-block;
+            font-weight: 900;
+        }
+
+        /*--about sunny yoga--*/
+
+        .asy-text-style{
+            font-size: 12px;
+            color: #5a6e4b;
+            line-height: 24px;
+        }
+
+        .asy-horiz-img{
+            background-image: url("img/asy-horiz.png");
+            background-position: right center;
+            background-repeat: no-repeat;
+            height: 36px;
+        }
+
+        /*--footer--*/
+        .sy-footer-bg{
+            background-color: #5a6e4b;
+            padding-bottom: 10px;
+        }
+        .sy-footer{
+            border-bottom: 1px solid #ffffff;
+            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+            background-color: #819b6c;
+            display: table;
+            width: 100%;
+            padding: 10px 0;
+        }
+        .sy-footer-text{
+            text-align: center;
+            color: #ffffff;
+            font-size: 12px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            transform: scale(0.87);
+        }
+
+        /*--style for fancybox--*/
+        .fancy-gallery{
+            display: flex; flex-direction: row; align-content:flex-start;flex-wrap: wrap;  width: 100%;
+        }
+
+        .fancy-item-title{
+            min-width: 200px;
+            max-width: 350px;
+            flex: 1;
+            overflow: hidden;
+            margin: 5px;
+            background-color: #819b6c;
+            padding: 15px 20px;
+        }
+
+        .fancy-item{
+            min-width: 200px;
+            max-width: 350px;
+            flex: 1;
+            overflow: hidden;
+            margin: 5px;
+        }
+
+        .item-title{
+            font-size: 24px;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+            font-weight: 900;
+            color: #ffffff;
+        }
+
+        .item-contain{
+            font-size: 14px;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+            font-weight: 900;
+            color: #ffffff;
+        }
+
+        .fancy-item > img {
+            height: auto;
+            width: 100%;
+        }
+
+    </style>
+
+
+    <script>
+        function link_to(e){
+            var link_src = $(e).attr('datasrc');
+            $(location).attr('href',link_src);
+        }
+
+        $(function(){
+            $(' .marquee-text').animate({right:'1000px'},10000);
+
+            $(' .menu-btn').on({mouseenter:function(){
+                var this_icon = $(this).find('.btn-icon');
+                this_icon.addClass('rotate-on');
+            },mouseleave:function(){
+                var this_icon = $(this).find('.btn-icon');
+                this_icon.removeClass('rotate-on');
+            }});
+        });
+    </script>
+</head>
+<body>
+
+<!--header-->
+<div class="header-bg">
+    <div class="header">
+        <div class="brand-logo" style="padding-left: 50px; padding-top: 10px;" onclick="link_to(this)" datasrc="index.html">
+            <img width="auto" height="50" src="img/logo.jpg">
+        </div>
+        <div class="menu" style="padding-right: 50px;">
+
+            <div class="menu-btn" content="會館介紹" onclick="link_to(this);" datasrc="about.html">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-1"></div> </div>
+                </div>
+                <div class="side-right">
+                    會館介紹<br><div class="menu-btn-en">ABOUT</div>
+                </div>
+            </div>
+
+            <div class="menu-btn" content="認識瑜珈" onclick="link_to(this)" datasrc="visit_yoga.html">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-2"></div> </div>
+                </div>
+                <div class="side-right">
+                    認識瑜珈<br><div class="menu-btn-en">VISIT YOGA</div>
+                </div>
+            </div>
+
+            <div class="menu-btn" content="課程" onclick="link_to(this)" datasrc="class.html">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-3"></div> </div>
+                </div>
+                <div class="side-right">
+                    課程<br><div class="menu-btn-en">CLASS</div>
+                </div>
+            </div>
+
+            <div class="menu-btn" content="師資" onclick="link_to(this)" datasrc="teachers.html">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-4"></div> </div>
+                </div>
+                <div class="side-right">
+                    師資<br><div class="menu-btn-en">TEACHERS</div>
+                </div>
+            </div>
+
+            <div class="menu-btn" content="活動花絮" onclick="link_to(this)" datasrc="events.html" style="display: none;">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-5"></div> </div>
+                </div>
+                <div class="side-right">
+                    活動花絮<br><div class="menu-btn-en">EVENTS</div>
+                </div>
+            </div>
+
+            <div class="menu-btn" content="聯絡我們" onclick="link_to(this)" datasrc="contact.html">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-6"></div> </div>
+                </div>
+                <div class="side-right">
+                    聯絡我們<br><div class="menu-btn-en">CONTACT</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--AD-->
+<div class="ad-area mb-30 ad-6"></div>
+
+<!--Main Contain-->
+<div class="container">
+    <div class="main-wrapper about-sunnyyoga">
+        <div class="row mb-30">
+            <div class="col-xs-3">
+                <div class="side-left">
+                    <img style="margin-right: 5px;" src="img/events-icon.png">
+                </div>
+                <div class="side-left">
+                    <div class="title-tw">活動花絮<br>
+                        <div class="title-en">Event</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-9 asy-horiz-img"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="fancy-gallery">
+                    <a class="fancy-item-title">
+                       <span class="item-title">
+                           明誠瑜珈會館
+                       </span><br>
+                        <span class="item-contain">
+                           明誠瑜珈會館的文字內容如下
+                       </span>
+                    </a>
+                    <a class="fancy-item" href="https://c1.staticflickr.com/9/8148/29324593462_abebaddc38_k.jpg" data-fancybox="images">
+                        <img src="https://c1.staticflickr.com/9/8148/29324593462_f890687b7a_m.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="https://c2.staticflickr.com/6/5499/30972532232_051e1dc57e_h.jpg" data-fancybox="images">
+                        <img src="https://c2.staticflickr.com/6/5499/30972532232_e9a298a0c5_m.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="https://c1.staticflickr.com/9/8021/29345513551_0c565462d8_k.jpg" data-fancybox="images">
+                        <img src="https://c1.staticflickr.com/9/8021/29345513551_16024a89e3_m.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="https://c1.staticflickr.com/1/357/31876784275_12286240d4_h.jpg" data-fancybox="images">
+                        <img src="https://c1.staticflickr.com/1/357/31876784275_fbc9696913_m.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="https://farm1.staticflickr.com/481/31675815133_70120d7a13_k_d.jpg" data-fancybox="images">
+                        <img src="https://farm1.staticflickr.com/481/31675815133_c5c2935c04_m_d.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="https://farm1.staticflickr.com/634/32032792255_bb579dee39_k_d.jpg" data-fancybox="images">
+                        <img src="https://farm1.staticflickr.com/634/32032792255_7a599d6cb9_m_d.jpg" />
+                    </a>
+                </div>
+                <script>
+                    $(function(){
+                        $('[data-fancybox="images"]').fancybox({
+                            loop : false,
+                            thumbs : {
+                                showOnStart : true
+                            }
+                        })
+                    });
+                </script>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="fancy-gallery">
+                    <a class="fancy-item-title">
+                       <span class="item-title">
+                           民族瑜珈會館
+                       </span><br>
+                        <span class="item-contain">
+                           民族瑜珈會館的文字內容如下
+                       </span>
+                    </a>
+                    <a class="fancy-item" href="https://c1.staticflickr.com/9/8148/29324593462_abebaddc38_k.jpg" data-fancybox="images">
+                        <img src="https://c1.staticflickr.com/9/8148/29324593462_f890687b7a_m.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="https://c2.staticflickr.com/6/5499/30972532232_051e1dc57e_h.jpg" data-fancybox="images">
+                        <img src="https://c2.staticflickr.com/6/5499/30972532232_e9a298a0c5_m.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="https://c1.staticflickr.com/9/8021/29345513551_0c565462d8_k.jpg" data-fancybox="images">
+                        <img src="https://c1.staticflickr.com/9/8021/29345513551_16024a89e3_m.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="https://c1.staticflickr.com/1/357/31876784275_12286240d4_h.jpg" data-fancybox="images">
+                        <img src="https://c1.staticflickr.com/1/357/31876784275_fbc9696913_m.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="https://farm1.staticflickr.com/481/31675815133_70120d7a13_k_d.jpg" data-fancybox="images">
+                        <img src="https://farm1.staticflickr.com/481/31675815133_c5c2935c04_m_d.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="https://farm1.staticflickr.com/634/32032792255_bb579dee39_k_d.jpg" data-fancybox="images">
+                        <img src="https://farm1.staticflickr.com/634/32032792255_7a599d6cb9_m_d.jpg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="hr-30"></div>
+    </div>
+</div>
+
+<!--Footer-->
+<div class="sy-footer-bg">
+    <div class="sy-footer">
+        <div class="sy-footer-text">
+            Copyright © 2017 Sunny Yoga Inc. All rights reserved<br>本網站由簡善琳瑜珈版權所有
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

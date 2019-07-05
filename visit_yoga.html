@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>簡善琳瑜珈會館 Sunny Yoga</title>
+    <link rel="icon" href="img/favicon.ico">
+
+    <!--jQuery-->
+    <script src="common/jquery-3.1.1.min.js"></script>
+
+    <!--jQueryColor-->
+    <script src="common/jquery.color.js"></script>
+
+    <!--Bootstrap-->
+    <link href="common/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="common/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <script src="common/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="common/bootstrap-3.3.7-dist/js/npm.js"></script>
+
+
+    <!--fancybox-->
+    <link href="common/fancybox-3.0/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+    <script src="common/fancybox-3.0/jquery.fancybox.min.js"></script>
+
+    <!--scrollTo-->
+    <script src="common/jquery.scrollTo.js"></script>
+
+    <!--main-->
+
+    <style>
+        /*--global--*/
+        body , html{
+            font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+            background-color: #fcfcfc;
+        }
+
+        .hr-12{
+            width: 100%;
+            height: 12px;
+            clear: both;
+        }
+
+        .hr-30{
+            width: 100%;
+            height: 30px;
+            clear: both;
+        }
+        .mb-30{
+            margin-bottom: 30px;
+        }
+
+        a:hover{
+            text-decoration: none;
+        }
+
+        /*--header--*/
+        .header-bg{
+            background-color: #6a7ca4;
+            padding-top: 10px;
+        }
+        .header{
+            border-top: 1px solid #ffffff;
+            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+            background-color: #98acd1;
+            display: table;
+            width: 100%;
+        }
+        .brand-logo{
+            float: left;
+            line-height: 36px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .menu{
+            float: right;
+            display: table;
+        }
+        .side-left{
+            display: inline-block;
+            float: left;
+            margin-right: 5px ;
+        }
+        .side-right{
+            display: inline-block;
+            float: right;
+        }
+        .btn-icon{
+            line-height: 30px;
+            transition: all 1s;
+            transform: rotate(0deg);
+        }
+        .btn-icon.rotate-on{
+            transform: rotate(360deg);
+        }
+        .btn-icon-1{
+            background: url("img/icon-1.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .btn-icon-2{
+            background: url("img/icon-2.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .btn-icon-3{
+            background: url("img/icon-3.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .btn-icon-4{
+            background: url("img/icon-4.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .btn-icon-5{
+            background: url("img/icon-5.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .btn-icon-6{
+            background: url("img/icon-6.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .menu-btn{
+            font-size: 14px;
+            padding: 18px 10px;
+            color: #ffffff;
+            display: inline-table;
+            line-height: 15px;
+            cursor: pointer;
+        }
+        .menu-btn-en{
+            font-size: 10px;
+            -webkit-transform:scale(0.83);
+            color: #ffffff;
+            display: inline-block;
+            margin-left: -3px;
+        }
+
+        /*--AD--*/
+        .ad-area{
+            height: 200px;
+            background-position: center center;
+            background-size: cover;
+        }
+        .ad-1{
+            background-image: url("img/ad-1.jpg");
+        }
+        .ad-2{
+            background-image: url("img/ad-2.jpg");
+        }
+        .ad-3{
+            background-image: url("img/ad-3.jpg");
+        }
+        .ad-5{
+            background-image: url("img/ad-5.jpg");
+        }
+
+        /*--main container-*/
+        .container{
+            background-color: #ffffff;
+        }
+        .main-wrapper{
+            padding-top: 20px;
+        }
+        .title-tw{
+            color: #6a7ca4;
+            font-size: 16px;
+            line-height: 17px;
+            display: inline-block;
+            font-weight: 900;
+        }
+        .title-en{
+            font-size: 12px;
+            -webkit-transform:scale(0.83);
+            color: #6a7ca4;
+            display: inline-block;
+            font-weight: 900;
+        }
+
+        /*--about sunny yoga--*/
+
+        .asy-text-style{
+            font-size: 14px;
+            color: #6a7ca4;
+            line-height: 24px;
+        }
+
+        .asy-horiz-img{
+            background-image: url("img/asy-horiz.png");
+            background-position: right center;
+            background-repeat: no-repeat;
+            height: 36px;
+        }
+
+        /*--footer--*/
+        .sy-footer-bg{
+            background-color: #6a7ca4;
+            padding-bottom: 10px;
+        }
+        .sy-footer{
+            border-bottom: 1px solid #ffffff;
+            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+            background-color: #98acd1;
+            display: table;
+            width: 100%;
+            padding: 10px 0;
+        }
+        .sy-footer-text{
+            text-align: center;
+            color: #ffffff;
+            font-size: 12px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            transform: scale(0.87);
+        }
+
+        /*--style for fancybox--*/
+        .fancy-gallery{
+            display: flex; flex-direction: row; align-content:flex-start;flex-wrap: wrap;  width: 100%;
+        }
+
+        .fancy-item:first-child{
+            background-color: #98acd1;
+            padding: 15px 20px;
+        }
+
+        .fancy-item-text-inside{
+            background-color: #98acd1;
+            padding: 15px 20px;
+        }
+
+        .fancy-item{
+            min-width: 200px;
+            max-width: 350px;
+            flex: 1;
+            overflow: hidden;
+            margin: 5px;
+            height: 150px;
+            white-space: nowrap;
+            background-color: #dddddd;
+        }
+
+        .item-title{
+            font-size: 24px;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+            font-weight: 900;
+            color: #ffffff;
+        }
+
+        .item-contain{
+            font-size: 14px;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+            font-weight: 900;
+            color: #ffffff;
+        }
+
+        .fancy-item > img {
+            height: auto;
+            width: 100%;
+            vertical-align: middle;
+            display: inline-block;
+            max-height: 300px;
+        }
+
+        .helper {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        /*--button group--*/
+
+        .btn-group-each{
+            flex: 1;
+        }
+    </style>
+
+
+    <script>
+        function link_to(e){
+            var link_src = $(e).attr('datasrc');
+            $(location).attr('href',link_src);
+        }
+
+        $(function(){
+            $(' .marquee-text').animate({right:'1000px'},10000);
+
+            $(' .menu-btn').on({mouseenter:function(){
+                var this_icon = $(this).find('.btn-icon');
+                this_icon.addClass('rotate-on');
+            },mouseleave:function(){
+                var this_icon = $(this).find('.btn-icon');
+                this_icon.removeClass('rotate-on');
+            }});
+        });
+    </script>
+</head>
+<body>
+
+<!--header-->
+<div class="header-bg">
+    <div class="header">
+        <div class="brand-logo" style="padding-left: 50px; padding-top: 10px;" onclick="link_to(this)" datasrc="index.html">
+            <img width="auto" height="50" src="img/logo.jpg">
+        </div>
+        <div class="menu" style="padding-right: 50px;">
+
+            <div class="menu-btn" content="會館介紹" onclick="link_to(this);" datasrc="about.html">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-1"></div> </div>
+                </div>
+                <div class="side-right">
+                    會館介紹<br><div class="menu-btn-en">ABOUT</div>
+                </div>
+            </div>
+
+            <div class="menu-btn" content="認識瑜珈" onclick="link_to(this)" datasrc="visit_yoga.html">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-2"></div> </div>
+                </div>
+                <div class="side-right">
+                    認識瑜珈<br><div class="menu-btn-en">VISIT YOGA</div>
+                </div>
+            </div>
+
+            <div class="menu-btn" content="課程" onclick="link_to(this)" datasrc="class.html">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-3"></div> </div>
+                </div>
+                <div class="side-right">
+                    課程<br><div class="menu-btn-en">CLASS</div>
+                </div>
+            </div>
+
+            <div class="menu-btn" content="師資" onclick="link_to(this)" datasrc="teachers.html">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-4"></div> </div>
+                </div>
+                <div class="side-right">
+                    師資<br><div class="menu-btn-en">TEACHERS</div>
+                </div>
+            </div>
+
+            <div class="menu-btn" content="活動花絮" onclick="link_to(this)" datasrc="events.html" style="display: none;">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-5"></div> </div>
+                </div>
+                <div class="side-right">
+                    活動花絮<br><div class="menu-btn-en">EVENTS</div>
+                </div>
+            </div>
+
+            <div class="menu-btn" content="聯絡我們" onclick="link_to(this)" datasrc="contact.html">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-6"></div> </div>
+                </div>
+                <div class="side-right">
+                    聯絡我們<br><div class="menu-btn-en">CONTACT</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--AD-->
+<div class="ad-area mb-30 ad-5"></div>
+
+<!--Main Contain-->
+<div class="container">
+    <div class="main-wrapper about-sunnyyoga">
+        <div class="row mb-30">
+            <div class="col-xs-3">
+                <div class="side-left">
+                    <img style="margin-right: 5px;" src="img/visit-yoga-icon.png">
+                </div>
+                <div class="side-left">
+                    <div class="title-tw">認識瑜珈<br>
+                        <div class="title-en">Visit Yoga</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-9 asy-horiz-img" style="opacity: 0.5;"></div>
+        </div>
+
+        <script>
+            function scrollToFunc (e){
+                var scrollId = $(e).attr('datasrc');
+                $.scrollTo($(scrollId),200);
+            }
+        </script>
+
+        <div class="row mb-30">
+            <div class="col-md-12" style="margin-bottom: 12px;">
+                <div class="btn-group" role="group" style="width: 100%; display: flex">
+                    <button type="button" class="btn btn-primary btn-group-each" onclick="scrollToFunc(this)" datasrc="#yoga01">初級瑜珈</button>
+                    <button type="button" class="btn btn-primary btn-group-each" onclick="scrollToFunc(this)" datasrc="#yoga02">整體瑜珈</button>
+                    <button type="button" class="btn btn-primary btn-group-each" onclick="scrollToFunc(this)" datasrc="#yoga03">哈達瑜珈</button>
+                    <button type="button" class="btn btn-primary btn-group-each" onclick="scrollToFunc(this)" datasrc="#yoga04">養生瑜珈</button>
+                    <button type="button" class="btn btn-primary btn-group-each" onclick="scrollToFunc(this)" datasrc="#yoga05">有氧瑜珈</button>
+                    <button type="button" class="btn btn-primary btn-group-each" onclick="scrollToFunc(this)" datasrc="#yoga06">塑身瑜珈</button>
+                    <button type="button" class="btn btn-primary btn-group-each" onclick="scrollToFunc(this)" datasrc="#yoga07">氣功瑜珈</button>
+                    <button type="button" class="btn btn-primary btn-group-each" onclick="scrollToFunc(this)" datasrc="#yoga08">瑜珈提斯</button>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="btn-group" role="group" style="width: 100%; display: flex;">
+                    <button type="button" class="btn btn-primary btn-group-each" onclick="scrollToFunc(this)" datasrc="#yoga09">Ashtanga</button>
+                    <button type="button" class="btn btn-primary btn-group-each" onclick="scrollToFunc(this)" datasrc="#yoga10">孕婦瑜珈</button>
+                    <button type="button" class="btn btn-primary btn-group-each" onclick="scrollToFunc(this)" datasrc="#yoga11">新生班</button>
+                    <button type="button" class="btn btn-primary btn-group-each" onclick="scrollToFunc(this)" datasrc="#yoga12">進階瑜珈</button>
+                    <button type="button" class="btn btn-primary btn-group-each" onclick="scrollToFunc(this)" datasrc="#yoga13">體位法瑜珈</button>
+                    <button type="button" class="btn btn-primary btn-group-each" onclick="scrollToFunc(this)" datasrc="#yoga14">肚皮舞</button>
+                    <button type="button" class="btn btn-primary btn-group-each" onclick="scrollToFunc(this)" datasrc="#yoga15">師資培訓</button>
+                    <button type="button" class="btn btn-primary btn-group-each" onclick="scrollToFunc(this)" datasrc="#yoga16">上課叮嚀</button>
+                </div>
+            </div>
+        </div>
+
+        <!--新生班11-->
+        <div class="row mb-30" id="yoga11">
+            <div class="col-md-12">
+                <div class="fancy-gallery">
+                    <a class="fancy-item">
+                       <span class="item-title">
+                           新生班
+                       </span><br>
+                        <span class="item-contain">
+
+                       </span>
+                    </a>
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/new/DSC_0897.jpg" data-fancybox="images" data-caption="新生班 【拜月式】示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/new/DSC_0897.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/new/DSC_0921.jpg" data-fancybox="images" data-caption="新生班 【拜月式】示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/new/DSC_0921.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/new/DSC_0971.jpg" data-fancybox="images" data-caption="新生班 【拜月式】示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/new/DSC_0971.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/new/DSC_0986.jpg" data-fancybox="images" data-caption="新生班 【拜月式】示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/new/DSC_0986.jpg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-30">
+            <div class="col-md-12">
+                <div class="asy-text-style">
+                    針對新生教授正確瑜珈呼吸法、八種基本動作的解析，並調整正確的姿勢，採預約小班教學，讓新生容易適應教室多元化的課程。 <span class="glyphicon glyphicon-save" onclick="scrollToFunc(this)" datasrc="body" style="transform: rotate(180deg); cursor: pointer;"></span>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!--初級瑜珈01-->
+        <div class="row mb-30" id="yoga01">
+            <div class="col-md-12">
+                <div class="fancy-gallery">
+                    <a class="fancy-item">
+                       <span class="item-title">
+                           初級瑜珈
+                       </span><br>
+                        <span class="item-contain" style="display: none;">
+                           針對初學者教授九大關節操、拜日式、基本功法、靜脈呼吸法等，溫和而緩慢的瑜珈
+                       </span>
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/type-6/type_6_06.jpg" data-fancybox="images" data-caption="整體瑜珈-拜日式 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/type-6/type_6_06.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/type-6/type_6_07.jpg" data-fancybox="images" data-caption="整體瑜珈-拜日式 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/type-6/type_6_07.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/type-6/type_6_08.jpg" data-fancybox="images" data-caption="整體瑜珈-拜日式 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/type-6/type_6_08.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/type-6/type_6_09.jpg" data-fancybox="images" data-caption="整體瑜珈-拜日式 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/type-6/type_6_09.jpg" />
+                    </a>
+                </div>
+                <script>
+                    $(function(){
+                        $('[data-fancybox="images"]').fancybox({
+                            loop : false,
+                            thumbs : {
+                                showOnStart : true
+                            }
+                        })
+                    });
+                </script>
+            </div>
+        </div>
+
+        <div class="row mb-30">
+            <div class="col-md-12">
+                <div class="asy-text-style">
+                    針對初學者教授九大關節操、敗日式、基本功法、靜脈呼吸法等，溫和而緩慢的瑜珈，透過簡單的延展動作及呼吸按摩身體各部位的經脈，奠定初學者學習瑜珈的基礎。 <span class="glyphicon glyphicon-save" onclick="scrollToFunc(this)" datasrc="body" style="transform: rotate(180deg); cursor: pointer;"></span>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!--整體瑜珈02-->
+        <div class="row mb-30" id="yoga02">
+            <div class="col-md-12">
+                <div class="fancy-gallery">
+                    <a class="fancy-item">
+                       <span class="item-title">
+                           正位瑜珈
+                       </span><br>
+                        <span class="item-contain" style="display: none;">
+                           是一種柔和的結合，以特殊的方法來發展個人的身、心、靈的每一層面，使個人能有最完整與和諧的發揮與提升
+                       </span>
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/Ashtanga/01.jpg" data-fancybox="images" data-caption="Ashtanga瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/Ashtanga/01.jpg" />
+                    </a>
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/Ashtanga/02.jpg" data-fancybox="images" data-caption="Ashtanga瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/Ashtanga/02.jpg" />
+                    </a>
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/Ashtanga/03.jpg" data-fancybox="images" data-caption="Ashtanga瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/Ashtanga/03.jpg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-30">
+            <div class="col-md-12">
+                <div class="asy-text-style">
+                    是一種柔和的結合，以特殊的方法來發展個人的身、心、靈的每一層面，使個人能有最完整與和諧的發揮與提升，內容較為廣泛，包含瑜珈基礎理論、飲食、養生、哲學、科學、醫學、靜坐冥想、宗教....等，適合有基礎且學習一段時間之學員。 <span class="glyphicon glyphicon-save" onclick="scrollToFunc(this)" datasrc="body" style="transform: rotate(180deg); cursor: pointer;"></span>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!--哈達瑜珈03-->
+        <div class="row mb-30" id="yoga03">
+            <div class="col-md-12">
+                <div class="fancy-gallery">
+                    <a class="fancy-item">
+                       <span class="item-title">
+                           哈達瑜珈
+                       </span><br>
+                        <span class="item-contain">
+                       </span>
+                    </a>
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/hada/DSCF7624.jpg" data-fancybox="images" data-caption="哈達瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/hada/DSCF7624.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/hada/DSCF2055.jpg" data-fancybox="images" data-caption="哈達瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/hada/DSCF2055.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/type-6/type_6_10.jpg" data-fancybox="images" data-caption="哈達瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/type-6/type_6_10.jpg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-30">
+            <div class="col-md-12">
+                <div class="asy-text-style">
+                    著重身體的淨化，藉著正確呼吸法和適當瑜珈延伸動作，來淨化我們的心靈，練習身印或手印來幫助身體腺體分泌正常，達到健康及身心平衡。 <span class="glyphicon glyphicon-save" onclick="scrollToFunc(this)" datasrc="body" style="transform: rotate(180deg); cursor: pointer;"></span>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!--養生瑜珈04-->
+        <div class="row mb-30" id="yoga04">
+            <div class="col-md-12">
+                <div class="fancy-gallery">
+                    <a class="fancy-item">
+                       <span class="item-title">
+                           養生瑜珈
+                       </span><br>
+                        <span class="item-contain">
+                       </span>
+                    </a>
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/type-10/type_10_01.jpg" data-fancybox="images" data-caption="養生瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/type-10/type_10_01.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/type-10/type_10_02.jpg" data-fancybox="images" data-caption="養生瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/type-10/type_10_02.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/type-10/type_10_03.jpg" data-fancybox="images" data-caption="養生瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/type-10/type_10_03.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/type-10/type_10_04.jpg" data-fancybox="images" data-caption="養生瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/type-10/type_10_04.jpg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-30">
+            <div class="col-md-12">
+                <div class="asy-text-style">
+                    透過各種瑜珈輔助教材來按摩及強化身體，可以增加身體腺體的分泌，提升身體循環及代謝能力，並可疏通人體十二經絡及任督二脈的氣血循環，進而矯正身體偏差及脊椎不正之問題，達到養生減壓舒眠，告別肩頸全身痠痛，平衡身心最有效率的實用課程。 <span class="glyphicon glyphicon-save" onclick="scrollToFunc(this)" datasrc="body" style="transform: rotate(180deg); cursor: pointer;"></span>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!--有氧瑜珈05-->
+        <div class="row mb-30" id="yoga05">
+            <div class="col-md-12">
+                <div class="fancy-gallery">
+                    <a class="fancy-item">
+                       <span class="item-title">
+                           有氧瑜珈
+                       </span><br>
+                        <span class="item-contain">
+
+                       </span>
+                    </a>
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/aerobic/aerobic_01.jpg" data-fancybox="images" data-caption="有氧瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/aerobic/aerobic_01.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/aerobic/aerobic_02.jpg" data-fancybox="images" data-caption="有氧瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/aerobic/aerobic_02.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/aerobic/aerobic_03.jpg" data-fancybox="images" data-caption="有氧瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/aerobic/aerobic_03.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/aerobic/aerobic_04.jpg" data-fancybox="images" data-caption="有氧瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/aerobic/aerobic_04.jpg" />
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-30">
+            <div class="col-md-12">
+                <div class="asy-text-style">
+                    前20分鐘有氧動態課程，體適能全功能性熱身運動，當身體透過氧氣燃燒再加上40分鐘瑜珈靜態課程，藉由「集中呼吸」、「身體無限延伸」來達到肌群強化、柔軟、平衡、輕鬆擁抱健康。 <span class="glyphicon glyphicon-save" onclick="scrollToFunc(this)" datasrc="body" style="transform: rotate(180deg); cursor: pointer;"></span>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!--塑身瑜珈06-->
+        <div class="row mb-30" id="yoga06">
+            <div class="col-md-12">
+                <div class="fancy-gallery">
+                    <a class="fancy-item">
+                       <span class="item-title">
+                           塑身瑜珈
+                       </span><br>
+                        <span class="item-contain">
+                       </span>
+                    </a>
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/visit_yoga_01.jpg" data-fancybox="images" data-caption="塑身瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/visit_yoga_01.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/visit_yoga_03.jpg" data-fancybox="images" data-caption="塑身瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/visit_yoga_03.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/visit_yoga_04.jpg" data-fancybox="images" data-caption="塑身瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/visit_yoga_04.jpg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-30">
+            <div class="col-md-12">
+                <div class="asy-text-style">
+                    藉由課程的設計，如何培養正確的健康飲食概念，養成端正優美姿勢，學會正確的呼吸、專注、放鬆的技巧，來訓練身體肌肉的耐力，讓身體消耗更多脂肪，並針對身體的腰腹臀腿作局部強效的塑身運動，讓你跟下半身肥胖說Bye-Bye。 <span class="glyphicon glyphicon-save" onclick="scrollToFunc(this)" datasrc="body" style="transform: rotate(180deg); cursor: pointer;"></span>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!--氣功瑜珈07-->
+        <div class="row mb-30" id="yoga07">
+            <div class="col-md-12">
+                <div class="fancy-gallery">
+                    <a class="fancy-item">
+                       <span class="item-title">
+                           氣功瑜珈
+                       </span><br>
+                        <span class="item-contain">
+                       </span>
+                    </a>
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/type-11/type_11_01.jpg" data-fancybox="images" data-caption="氣功瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/type-11/type_11_01.jpg" />
+                    </a>
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/type-11/type_11_02.jpg" data-fancybox="images" data-caption="氣功瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/type-11/type_11_02.jpg" />
+                    </a>
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/type-11/type_11_03.jpg" data-fancybox="images" data-caption="氣功瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/type-11/type_11_03.jpg" />
+                    </a>
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/type-11/type_11_04.jpg" data-fancybox="images" data-caption="氣功瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/type-11/type_11_04.jpg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-30">
+            <div class="col-md-12">
+                <div class="asy-text-style">
+                    配合氣功的教學，達到靜中有動、動中有靜，結合中國養生氣功、八段錦、太極氣功等功法，以意領氣，意氣相隨，從而疏通經絡，調合氣血，達到有病治病，無病強身的效果，適合於體弱及慢性病者鍛鍊。 <span class="glyphicon glyphicon-save" onclick="scrollToFunc(this)" datasrc="body" style="transform: rotate(180deg); cursor: pointer;"></span>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!--瑜珈提斯08-->
+        <div class="row mb-30" id="yoga08">
+            <div class="col-md-12">
+                <div class="fancy-gallery">
+                    <a class="fancy-item">
+                       <span class="item-title">
+                           瑜珈提斯
+                       </span><br>
+                        <span class="item-contain">
+                       </span>
+                    </a>
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/yogalates/DSCF1972.jpg" data-fancybox="images" data-caption="有氧瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/yogalates/DSCF1972.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/yogalates/DSCF1973.jpg" data-fancybox="images" data-caption="有氧瑜伽 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/yogalates/DSCF1973.jpg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-30">
+            <div class="col-md-12">
+                <div class="asy-text-style">
+                    充分融合了東方瑜珈與源自德國的彼拉提斯，可說是結合了兩者的優點：瑜珈的延伸柔軟加上彼拉提斯的核心肌群訓練，動作簡單易學，可以輕鬆美化曲線，也能享受運動帶來的健康。 <span class="glyphicon glyphicon-save" onclick="scrollToFunc(this)" datasrc="body" style="transform: rotate(180deg); cursor: pointer;"></span>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!--孕婦瑜珈10-->
+        <div class="row mb-30" id="yoga10">
+            <div class="col-md-12">
+                <div class="fancy-gallery">
+                    <a class="fancy-item">
+                       <span class="item-title">
+                           孕婦瑜珈
+                       </span><br>
+                        <span class="item-contain">
+
+                       </span>
+                    </a>
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/pregnant/pregnant_01.jpg" data-fancybox="images" data-caption="孕婦瑜珈 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/pregnant/pregnant_01.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/pregnant/pregnant_02.jpg" data-fancybox="images" data-caption="孕婦瑜珈 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/pregnant/pregnant_02.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/pregnant/pregnant_03.jpg" data-fancybox="images" data-caption="孕婦瑜珈 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/pregnant/pregnant_03.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/pregnant/pregnant_04.jpg" data-fancybox="images" data-caption="孕婦瑜珈 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/pregnant/pregnant_04.jpg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-30">
+            <div class="col-md-12">
+                <div class="asy-text-style">
+                    結合簡單易學及精準的瑜珈呼吸及體位法練習，讓身體及心靈得到覺敏，使孕婦以強壯身體的耐力及放鬆的心情，來面對快速的身體變化。在專注進行練習及靜坐中，減緩背痛、增加消化功能、骨盆底肌群訓練，以及胎兒可感受母親放鬆愉悅的情緒流動，得到良好的成長。 <span class="glyphicon glyphicon-save" onclick="scrollToFunc(this)" datasrc="body" style="transform: rotate(180deg); cursor: pointer;"></span>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!--進階瑜珈12-->
+        <div class="row mb-30" id="yoga12">
+            <div class="col-md-12">
+                <div class="fancy-gallery">
+                    <a class="fancy-item">
+                       <span class="item-title">
+                           進階瑜珈
+                       </span><br>
+                        <span class="item-contain">
+                       </span>
+                    </a>
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/advenced/advenced_01.jpg" data-fancybox="images" data-caption="進階瑜珈 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/advenced/advenced_01.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/advenced/advenced_02.jpg" data-fancybox="images" data-caption="進階瑜珈 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/advenced/advenced_02.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/advenced/advenced_03.jpg" data-fancybox="images" data-caption="進階瑜珈 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/advenced/advenced_03.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/advenced/advenced_04.jpg" data-fancybox="images" data-caption="進階瑜珈 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/advenced/advenced_04.jpg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-30">
+            <div class="col-md-12">
+                <div class="asy-text-style">
+                    針對已有瑜珈基礎的學員指導難度較高的體位法，透過呼吸法來增加生命能量，配合全方位瑜珈連串動作，能更深層按摩身體內臟及強化縣體，達到身心靈平衡。 <span class="glyphicon glyphicon-save" onclick="scrollToFunc(this)" datasrc="body" style="transform: rotate(180deg); cursor: pointer;"></span>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!--體位法瑜珈13-->
+        <div class="row mb-30" id="yoga13">
+            <div class="col-md-12">
+                <div class="fancy-gallery">
+                    <a class="fancy-item">
+                       <span class="item-title">
+                           體位法瑜珈
+                       </span><br>
+                        <span class="item-contain">
+                       </span>
+                    </a>
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/visit_yoga_02.jpg" data-fancybox="images" data-caption="體位法瑜珈 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/visit_yoga_02.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/visit_yoga_06.jpg" data-fancybox="images" data-caption="體位法瑜珈 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/visit_yoga_06.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/visit_yoga_07.jpg" data-fancybox="images" data-caption="體位法瑜珈 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/visit_yoga_07.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/visit_yoga_08.jpg" data-fancybox="images" data-caption="體位法瑜珈 示範動作">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/visit_yoga_08.jpg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-30">
+            <div class="col-md-12">
+                <div class="asy-text-style">
+                    針對基本體位法的解析，身體偏差的修正，加強訓練單項瑜珈的伸展動作，藉此提升我們身體的柔軟度和免疫力，進而達到更深層的排毒和放鬆。 <span class="glyphicon glyphicon-save" onclick="scrollToFunc(this)" datasrc="body" style="transform: rotate(180deg); cursor: pointer;"></span>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!--師資培訓15-->
+        <div class="row mb-30" id="yoga15">
+            <div class="col-md-12">
+                <div class="fancy-gallery">
+                    <a class="fancy-item">
+                       <span class="item-title">
+                           師資培訓
+                       </span><br>
+                        <span class="item-contain">
+                       </span>
+                    </a>
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/class_for_teachers/class_for_teachers_01.jpg" data-fancybox="images" data-caption="師資培訓班示範">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/class_for_teachers/class_for_teachers_01.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/class_for_teachers/class_for_teachers_02.jpg" data-fancybox="images" data-caption="師資培訓班示範">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/class_for_teachers/class_for_teachers_02.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/class_for_teachers/class_for_teachers_03.jpg" data-fancybox="images" data-caption="師資培訓班示範">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/class_for_teachers/class_for_teachers_03.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/visit_yoga/sections/class_for_teachers/class_for_teachers_04.jpg" data-fancybox="images" data-caption="師資培訓班示範">
+                        <span class="helper"></span>
+                        <img src="img/sm_type/visit_yoga/sections/class_for_teachers/class_for_teachers_04.jpg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-30">
+            <div class="col-md-12">
+                <div class="asy-text-style">
+                    歡迎有志從事瑜珈教學或推廣瑜珈的人士參加，備有一套完整的專業整體瑜珈課程，並提供教學場所及工作機會。 <span class="glyphicon glyphicon-save" onclick="scrollToFunc(this)" datasrc="body" style="transform: rotate(180deg); cursor: pointer;"></span>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!--上課叮嚀16-->
+        <div class="row mb-30" id="yoga16">
+            <div class="col-md-12">
+                <div class="fancy-gallery">
+                    <a class="fancy-item" style="max-width: 100%;">
+                       <span class="item-title">
+                           上課小叮嚀
+                       </span><br>
+                        <span class="item-contain">
+                           Class Tips
+                       </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-30">
+            <div class="col-md-12">
+                <div class="asy-text-style">
+                    1.新生第一次上課，須預約課程，<span style="color: red; font-weight: bold;">採小班繳學，限額十名。</span><br>
+                    2.上課前，請將手機關閉並將私人物品寄放於置物櫃內，勿將食物帶進教室。<br>
+                    3.上課時需穿舒適透氣的運動服飾，準備一條大浴巾及小毛巾。(冬天請準備薄毛毯)。有氧課程，請學員自備乾淨運動鞋。<br>
+                    4.<span style="color: red; font-weight: bold;">前後一小時禁止飲食，上課前後二十分鐘禁止沖澡或蒸氣浴</span>，以免散化練習瑜珈時所聚集的能量。<br>
+                    5.<span style="color: red; font-weight: bold;">生理期時可以上課</span>，避免倒立、肩力、犁鋤及激烈動作即可。<br>
+                    6.如遲到二十分鐘以上，請勿進教室以免造成運動傷害，若要續上下一堂課的學員，請勿中途離席以免影響其他學員上課情緒。<br>
+                    7.<span style="color: red; font-weight: bold;">上課前先行靜坐</span>，挺一精氣神，心情要放輕鬆，不宜講話或嘻笑以免運動傷害。<br>
+                    8.遵守瑜珈運動四大原則:<span style="color: red; font-weight: bold;">一、緩慢做動作，二、配合呼吸做動作，三、意識力集中於主要部位，四、完成姿勢保持靜止。</span><br>
+                    9.<span style="color: red; font-weight: bold;">每個人身體狀況互異不可操之過急</span>，如不舒服動作馬上停止，做完瑜珈後要攤屍大休息式，才能達到減肥增胖或改善體質、淨化心靈的效果。<br>
+                    10.如有特殊情況(例如生病、懷孕等須延期或調課)<span style="color: red; font-weight: bold;">請事先與櫃檯商討</span>，否則課程恕不延期。<br>
+                    PS1.養生瑜珈(輔助教材)：須配合輪棒、長棒、枕木、療枕、瑜珈球、健康帶、功夫帶等，以上教材由教室提供。<br>
+                    PS2.建議初學者，先不要上塑身、進階及整體瑜珈，其餘課程皆可，幾節課後再行進階體力較能適應。<br>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--Footer-->
+<div class="sy-footer-bg">
+    <div class="sy-footer">
+        <div class="sy-footer-text">
+            Copyright © 2017 Sunny Yoga Inc. All rights reserved<br>本網站由簡善琳瑜珈版權所有
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+  .type-1{    /*塑身瑜珈*/
+            background-color: #93579a;
+        }
+
+        .type-2{    /*正位瑜伽*/
+            background-color: #6773b9;
+        }
+
+        .type-3{    /*律動瑜伽*/
+            background-color: #59b0b5;
+        }
+
+        .type-4{    /*多元瑜伽*/
+            background: -webkit-linear-gradient(left, rgba(188,191,38,1) 0%,rgba(125,185,232,1) 100%);
+        }
+
+        .type-5{    /*經絡瑜伽*/ /*脈輪*/
+            background-color: #b8b858;
+        }
+
+        .type-6{    /*初級瑜伽*/
+            background-color: #45e055;
+        }
+
+        .type-7{    /*療癒瑜珈*/
+            background-color: #c27eaf;
+        }
+
+        .type-8{    /*時尚有氧*/
+            background-color: #404040;
+        }
+
+        .type-9{    /*氣功太極*/
+            background: linear-gradient(to right, rgba(255,231,50,1) 0%,rgba(127,122,54,1) 100%);
+        }
+
+        .type-10{   /*養生瑜珈*/
+            background-color: #ba926c;
+        }
+
+        .type-11{   /*氣功瑜珈*/
+            background-color: #00a8ba;
+        }
+
+        .type-12{   /*舒活瑜珈*/
+            background-color: #97762b;
+        }
+
+        .type-13{   /*纖體瑜珈*/
+            background-color: #972547;
+        }
+
+        .type-14{   /*流動瑜珈*/
+            background: linear-gradient(to right, rgba(167,207,223,1) 0%,rgba(35,83,138,1) 100%);
+        }
+
+        .type-15{   /*舒緩瑜珈*/
+            background-color: #c687a7;

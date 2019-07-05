@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!--jQuery-->
+    <script src="../common/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+    <input type="text" name="class" />
+    <input type="text" name="teacher" />
+    <input type="date" name="date" />
+    <input type="text" name="during" />
+    <button id="submit_button" type="button">submit</button>
+
+    <script>
+        const transfer = function() {
+            console.log('1');
+            let data = {
+                class: $('[name="class"]').val(),
+                teacher: $('[name="teacher"]').val(),
+                date: $('[name="date"]').val(),
+                during: $('[name="during"]').val()
+            }
+            let dataArray = [data, data]
+            console.log(data)
+            $.ajax({
+                type: 'POST',
+                url: 'edit.php',
+                data: {
+                    data: JSON.stringify(dataArray)
+                },
+                dataType: 'json'
+            })
+        }
+        $('#submit_button').on('click', transfer)
+    </script>
+</body>
+
+</html>

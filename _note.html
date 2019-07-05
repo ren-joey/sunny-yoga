@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>簡善琳瑜珈會館 Sunny Yoga</title>
+    <link rel="icon" href="img/favicon.ico">
+
+    <!--jQuery-->
+    <script src="common/jquery-3.1.1.min.js"></script>
+
+    <!--jQueryColor-->
+    <script src="common/jquery.color.js"></script>
+
+    <!--Bootstrap-->
+    <link href="common/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="common/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <script src="common/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="common/bootstrap-3.3.7-dist/js/npm.js"></script>
+
+
+    <!--fancybox-->
+    <link href="common/fancybox-3.0/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+    <script src="common/fancybox-3.0/jquery.fancybox.min.js"></script>
+
+    <!--scrollTo-->
+    <script src="common/jquery.scrollTo.js"></script>
+
+    <!--main-->
+    <style>
+        /*--global--*/
+        body , html{
+            font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+            background-color: #fcfcfc;
+        }
+
+        .hr-12{
+            width: 100%;
+            height: 12px;
+            clear: both;
+        }
+
+        .hr-30{
+            width: 100%;
+            height: 30px;
+            clear: both;
+        }
+        .mb-30{
+            margin-bottom: 30px;
+        }
+
+        a:hover{
+            text-decoration: none;
+        }
+
+        /*--header--*/
+        .header-bg{
+            background-color: #6a7ca4;
+            padding-top: 10px;
+        }
+        .header{
+            border-top: 1px solid #ffffff;
+            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+            background-color: #98acd1;
+            display: table;
+            width: 100%;
+        }
+        .brand-logo{
+            float: left;
+            line-height: 36px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .menu{
+            float: right;
+            display: table;
+        }
+        .side-left{
+            display: inline-block;
+            float: left;
+            margin-right: 5px ;
+        }
+        .side-right{
+            display: inline-block;
+            float: right;
+        }
+        .btn-icon{
+            line-height: 30px;
+            transition: all 1s;
+            transform: rotate(0deg);
+        }
+        .btn-icon.rotate-on{
+            transform: rotate(360deg);
+        }
+        .btn-icon-1{
+            background: url("img/icon-1.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .btn-icon-2{
+            background: url("img/icon-2.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .btn-icon-3{
+            background: url("img/icon-3.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .btn-icon-4{
+            background: url("img/icon-4.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .btn-icon-5{
+            background: url("img/icon-5.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .btn-icon-6{
+            background: url("img/icon-6.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .menu-btn{
+            font-size: 14px;
+            padding: 18px 10px;
+            color: #ffffff;
+            display: inline-table;
+            line-height: 15px;
+            cursor: pointer;
+        }
+        .menu-btn-en{
+            font-size: 10px;
+            -webkit-transform:scale(0.83);
+            color: #ffffff;
+            display: inline-block;
+            margin-left: -3px;
+        }
+
+        /*--AD--*/
+        .ad-area{
+            height: 200px;
+            background-position: center center;
+            background-size: cover;
+        }
+        .ad-1{
+            background-image: url("img/ad-1.jpg");
+        }
+        .ad-2{
+            background-image: url("img/ad-2.jpg");
+        }
+        .ad-3{
+            background-image: url("img/ad-3.jpg");
+        }
+        .ad-4{
+            background-image: url("img/ad-4.jpg");
+        }
+
+        /*--main container-*/
+        .container{
+            background-color: #ffffff;
+        }
+        .main-wrapper{
+            padding-top: 20px;
+        }
+        .title-tw{
+            color: #6a7ca4;
+            font-size: 16px;
+            line-height: 17px;
+            display: inline-block;
+            font-weight: 900;
+        }
+        .title-en{
+            font-size: 12px;
+            -webkit-transform:scale(0.83);
+            color: #6a7ca4;
+            display: inline-block;
+            font-weight: 900;
+        }
+
+        /*--about sunny yoga--*/
+
+        .asy-text-style{
+            font-size: 12px;
+            color: #6a7ca4;
+            line-height: 24px;
+        }
+
+        .asy-horiz-img{
+            background-image: url("img/asy-horiz.png");
+            background-position: right center;
+            background-repeat: no-repeat;
+            height: 36px;
+        }
+
+        /*--footer--*/
+        .sy-footer-bg{
+            background-color: #6a7ca4;
+            padding-bottom: 10px;
+        }
+        .sy-footer{
+            border-bottom: 1px solid #ffffff;
+            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+            background-color: #98acd1;
+            display: table;
+            width: 100%;
+            padding: 10px 0;
+        }
+        .sy-footer-text{
+            text-align: center;
+            color: #ffffff;
+            font-size: 12px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            transform: scale(0.87);
+        }
+
+        /*--style for fancybox--*/
+        .fancy-gallery{
+            display: flex; flex-direction: row; align-content:flex-start;flex-wrap: wrap;  width: 100%;
+        }
+
+        .fancy-item:first-child{
+            background-color: #98acd1;
+            padding: 15px 20px;
+        }
+
+        .fancy-item-text-inside{
+            background-color: #98acd1;
+            padding: 15px 20px;
+        }
+
+        .fancy-item{
+            min-width: 200px;
+            max-width: 350px;
+            flex: 1;
+            overflow: hidden;
+            margin: 5px;
+        }
+
+        .item-title{
+            font-size: 24px;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+            font-weight: 900;
+            color: #ffffff;
+        }
+
+        .item-contain{
+            font-size: 14px;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+            font-weight: 900;
+            color: #ffffff;
+        }
+
+        .fancy-item > img {
+            height: auto;
+            width: 100%;
+        }
+
+
+        /*--class tag--*/
+        .tag-style{
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 10px;
+            color: #ffffff;
+            font-weight: 900;
+        }
+
+        .type-1{    /*塑身瑜珈#93579a*/
+            background-color: #93579a;
+        }
+
+        .type-2{    /*正位瑜伽#6773b9*/
+            background-color: #93579a;
+        }
+
+        .type-3{    /*律動瑜伽#59b0b5*/
+            background-color: #93579a;
+        }
+
+        .type-4{    /*多元瑜伽-webkit-linear-gradient(left, rgba(188,191,38,1) 0%,rgba(125,185,232,1) 100%)*/
+            background-color: #93579a;
+        }
+
+        .type-5{    /*經絡瑜伽#b8b858*/
+            background-color: #93579a;
+        }
+
+        .type-6{    /*初級瑜伽#45e055*/
+            background-color: #c27eaf;
+        }
+
+        .type-7{    /*療癒瑜珈#c27eaf*/
+            background-color: #6773b9;
+        }
+
+        .type-8{    /*時尚有氧#404040*/
+            background-color: #93579a;
+        }
+
+        .type-9{    /*氣功太極-gradie*/
+            background: linear#93579ant(to right, rgba(255,231,50,1) 0%,rgba(127,122,54,1) 100%);
+        }
+
+        .type-10{   /*養生瑜珈#ba926c*/
+            background-color: #93579a;
+        }
+
+        .type-11{   /*氣功瑜珈#00a8ba*/
+            background-color: #93579a;
+        }
+
+        .type-12{   /*舒活瑜珈#97762b*/
+            background-color: #93579a;
+        }
+
+        .type-13{   /*纖體瑜珈#972547*/
+            background-color: #93579a;
+        }
+
+        .type-14{   /*流動瑜珈-webkit-linear-gradient(to right, rgba(167,207,223,1) 0%,rgba(35,83,138,1) 100%)*/
+            background-color: #93579a;
+        }
+
+        .type-15{   /*舒緩瑜珈#c687a7*/
+            background-color: #93579a;
+        }
+
+        /*--button group--*/
+
+        .btn-group-each{
+            flex: 1;
+        }
+
+    </style>
+
+
+    <script>
+        function link_to(e){
+            var link_src = $(e).attr('datasrc');
+            $(location).attr('href',link_src);
+        }
+
+        $(function(){
+            $(' .marquee-text').animate({right:'1000px'},10000);
+
+            $(' .menu-btn').on({mouseenter:function(){
+                var this_icon = $(this).find('.btn-icon');
+                this_icon.addClass('rotate-on');
+            },mouseleave:function(){
+                var this_icon = $(this).find('.btn-icon');
+                this_icon.removeClass('rotate-on');
+            }});
+        });
+    </script>
+</head>
+<body>
+
+<div id="hidden-content-a" style="display: none;">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="asy-text-style">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="panel-title" style="font-size: 18px;">本館上課公告</span>
+                    </div>
+                    <div class="panel-body">
+                        <span style="color: blue; font-weight: bold;">10/1值班老師：慧璇老師。10/8值班老師：芊芊老師。10/15值班老師：萊珍老師。10/22值班老師：玉婉老師。</span><br>
+                        <span style="color: red; font-weight: bold;">10/29清潔日休館一天。</span><br>
+                        <span style="color: red; font-weight: bold;"></span>
+                        靜態課程上課時間為70分鐘；動態及中午12:10課程為60分鐘，在課程期限內可彈性自由選課。<br>
+                        每堂上課人數限45位。<br>
+                        本館每月課表會以上課人數多寡及教學品質更課程。<br>
+                        國定假日及颱風公告日，本館均休假一天。<br>
+                        免費提供瑜伽墊。<br>
+                        新課程介紹：<br>
+                        陰瑜伽：教授一系列靜態、長時間停留的式子，以放鬆最常受壓的部位，例如韌帶和骨骼。較活躍的瑜伽練習較少照顧到這些部位。在這安靜的時刻中，釋放壓力，感受內在的安寧。它強調每一姿勢保持較長的時間(通常為3~5分鐘),並通過放鬆整個身體來保持姿勢。讓陰瑜伽成為靜默練習的基礎。讓它帶你進入思想明晰和平和的空間，在那裡能產生更多的沈思。(90分鐘,年會員免費,月卡加收100元,短期卡學員記卡2堂)<br>
+                        療癒瑜伽：此課程注重身體各部份在姿勢中精確的位置和細節，藉以改善個人身心上的種種毛病。具有深度的療癒、修復與安全，並使用瑜伽繩、瑜伽磚、瑜伽椅、抱枕與毛毯等專業輔助器材，以幫助練習者的身體平衡穩固，並提升心靈與心智。 (90分鐘,年度會員、月卡加收100元;短期卡學員記卡2堂)<br>
+                        修復瑜伽：此課程可以修正脊椎、骨盤不正,引導在生理期及面臨更年期時,如何正確的練習體位法,避免骨骼、關節及肌肉的退化,對女性生理期間能做適當的修復。(90分鐘,年會員免費,月卡加收100元,短期卡學員記卡2堂)<br>
+                        氣功太極：太極導引配合氣功教學,陰陽平衡,柔中帶剛;剛中帶柔;剛柔並濟,可達到身體平衡,疏通經絡,調合氣血,達到有病治病,無病強身的效果,適合體弱及慢性病者鍛鍊。<br>
+                        多元瑜伽：配合瑜伽帶、瑜伽球、瑜伽磚、綁腳帶等教材來強化身體,進而矯正身體偏差及脊椎不正之問題,達到減壓舒眠,平衡身心的效果 。<br>
+                        時尚有氧：透過簡單易懂的舞蹈融入優雅的爵士配合有氧,可強化心肺,雕塑肌肉線條。異國情調的伸展音樂,融入瑜伽動作原理,類似動態伸展的流程帶領著您的『心靈放鬆』。<br>
+                        全方位瑜伽：教授瑜伽傳承的智慧-八步功法，內容包含瑜伽基本概論、瑜伽之基本體位解析及修正、呼吸及冥想放鬆法、脊椎與全身器官的關聯，適合初學者學習。<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="hidden-content-b" style="display: none;">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="asy-text-style">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="panel-title" style="font-size: 18px;">本館上課公告</span>
+                    </div>
+                    <div class="panel-body">
+                        <span style="color: blue; font-weight: bold;">10/1值班老師：萊珍老師。10/8值班老師：帷菕老師。10/15值班老師：潔昕老師。10/22值班老師：惟菕老師。</span><br>
+                        <span style="color: red; font-weight: bold;">10/29清潔日休館一天。</span><br>
+                        <span style="color: red; font-weight: bold;"></span>
+                        靜態課程上課時間為70分鐘；動態及中午12:10課程為60分鐘，在課程期限內可彈性自由選課。<br>
+                        每堂上課人數限45位。<br>
+                        本館每月課表會以上課人數多寡及教學品質更課程。<br>
+                        國定假日及颱風公告日，本館均休假一天。<br>
+                        免費提供瑜伽墊。<br>
+                        新課程介紹：<br>
+                        陰瑜伽：教授一系列靜態、長時間停留的式子，以放鬆最常受壓的部位，例如韌帶和骨骼。較活躍的瑜伽練習較少照顧到這些部位。在這安靜的時刻中，釋放壓力，感受內在的安寧。它強調每一姿勢保持較長的時間(通常為3~5分鐘),並通過放鬆整個身體來保持姿勢。讓陰瑜伽成為靜默練習的基礎。讓它帶你進入思想明晰和平和的空間，在那裡能產生更多的沈思。(90分鐘,年會員免費,月卡加收100元,短期卡學員記卡2堂)<br>
+                        療癒瑜伽：此課程注重身體各部份在姿勢中精確的位置和細節，藉以改善個人身心上的種種毛病。具有深度的療癒、修復與安全，並使用瑜伽繩、瑜伽磚、瑜伽椅、抱枕與毛毯等專業輔助器材，以幫助練習者的身體平衡穩固，並提升心靈與心智。 (90分鐘,年度會員、月卡加收100元;短期卡學員記卡2堂)<br>
+                        修復瑜伽：此課程可以修正脊椎、骨盤不正,引導在生理期及面臨更年期時,如何正確的練習體位法,避免骨骼、關節及肌肉的退化,對女性生理期間能做適當的修復。(90分鐘,年會員免費,月卡加收100元,短期卡學員記卡2堂)<br>
+                        氣功太極：太極導引配合氣功教學,陰陽平衡,柔中帶剛;剛中帶柔;剛柔並濟,可達到身體平衡,疏通經絡,調合氣血,達到有病治病,無病強身的效果,適合體弱及慢性病者鍛鍊。<br>
+                        多元瑜伽：配合瑜伽帶、瑜伽球、瑜伽磚、綁腳帶等教材來強化身體,進而矯正身體偏差及脊椎不正之問題,達到減壓舒眠,平衡身心的效果 。<br>
+                        時尚有氧：透過簡單易懂的舞蹈融入優雅的爵士配合有氧,可強化心肺,雕塑肌肉線條。異國情調的伸展音樂,融入瑜伽動作原理,類似動態伸展的流程帶領著您的『心靈放鬆』。<br>
+                        全方位瑜伽：教授瑜伽傳承的智慧-八步功法，內容包含瑜伽基本概論、瑜伽之基本體位解析及修正、呼吸及冥想放鬆法、脊椎與全身器官的關聯，適合初學者學習。<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--header-->
+<div class="header-bg">
+    <div class="header">
+        <div class="brand-logo" style="padding-left: 50px; padding-top: 10px;" onclick="link_to(this)" datasrc="index.html">
+            <img width="auto" height="50" src="img/logo.jpg">
+        </div>
+        <div class="menu" style="padding-right: 50px;">
+
+            <div class="menu-btn" content="會館介紹" onclick="link_to(this);" datasrc="about.html">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-1"></div> </div>
+                </div>
+                <div class="side-right">
+                    會館介紹<br><div class="menu-btn-en">ABOUT</div>
+                </div>
+            </div>
+
+            <div class="menu-btn" content="認識瑜珈" onclick="link_to(this)" datasrc="visit_yoga.html">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-2"></div> </div>
+                </div>
+                <div class="side-right">
+                    認識瑜珈<br><div class="menu-btn-en">VISIT YOGA</div>
+                </div>
+            </div>
+
+            <div class="menu-btn" content="課程" onclick="link_to(this)" datasrc="class.html">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-3"></div> </div>
+                </div>
+                <div class="side-right">
+                    課程<br><div class="menu-btn-en">CLASS</div>
+                </div>
+            </div>
+
+            <div class="menu-btn" content="師資" onclick="link_to(this)" datasrc="teachers.html">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-4"></div> </div>
+                </div>
+                <div class="side-right">
+                    師資<br><div class="menu-btn-en">TEACHERS</div>
+                </div>
+            </div>
+
+            <div class="menu-btn" content="活動花絮" onclick="link_to(this)" datasrc="events.html" style="display: none;">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-5"></div> </div>
+                </div>
+                <div class="side-right">
+                    活動花絮<br><div class="menu-btn-en">EVENTS</div>
+                </div>
+            </div>
+
+            <div class="menu-btn" content="聯絡我們" onclick="link_to(this)" datasrc="contact.html">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-6"></div> </div>
+                </div>
+                <div class="side-right">
+                    聯絡我們<br><div class="menu-btn-en">CONTACT</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--AD-->
+<div class="ad-area mb-30 ad-4"></div>
+
+<!--Main Contain-->
+<div class="container">
+    <div class="main-wrapper about-sunnyyoga">
+        <div class="row mb-30">
+            <div class="col-xs-3">
+                <div class="side-left">
+                    <img style="margin-right: 5px;" src="img/class-title.png">
+                </div>
+                <div class="side-left">
+                    <div class="title-tw">課程表<br>
+                        <div class="title-en">Classes</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-9 asy-horiz-img" style="opacity: 0.5;"></div>
+        </div>
+
+        <div class="row mb-30" style="display: none;">
+            <div class="col-md-12">
+                <div class="btn-group" role="group" style="display: flex; width: 100%;">
+                    <button type="button" class="btn btn-success btn-group-each" onclick="scrollToFunc(this)" datasrc="#mj-class-1">民族館</button>
+                    <button type="button" class="btn btn-success btn-group-each" onclick="scrollToFunc(this)" datasrc="#mc-class-1">明誠館</button>
+                    <button type="button" class="btn btn-success btn-group-each" onclick="scrollToFunc(this)" datasrc="#mj-class-2">民族第二教室</button>
+                    <button type="button" class="btn btn-success btn-group-each" onclick="scrollToFunc(this)" datasrc="#mc-class-2">明誠第二教室</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function scrollToFunc (e){
+                var scrollId = $(e).attr('datasrc');
+                $.scrollTo($(scrollId),1000);
+            }
+        </script>
+
+        <!--民族館 PREV-->
+        <div class="row" id="mj-class-1p">
+            <div class="col-md-12">
+                <div class="asy-text-style">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span class="panel-title" style="font-size: 18px;">民族館【十月】&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <a data-fancybox data-src="#hidden-content-a" href="javascript:;"><button class="btn btn-default btn-xs">上課公告</button></a>
+                            <div style="float: right">
+                                <div class="type-6" style="display: inline-block;border-radius: 20px; width: 10px; height: 10px; margin-top: 4px;"></div>&nbsp;較適合剛接觸瑜珈的會員&nbsp;&nbsp;
+                                <div class="type-1" style="display: inline-block;border-radius: 20px; width: 10px; height: 10px; margin-top: 4px;"></div>&nbsp;適合對瑜珈有經驗的會員&nbsp;&nbsp;
+                                <div class="type-7" style="display: inline-block;border-radius: 20px; width: 10px; height: 10px; margin-top: 4px;"></div>&nbsp;為90分鐘課程
+                            </div>
+                        </div>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>時間</th>
+                                <td>星期一</td>
+                                <td>星期二</td>
+                                <td>星期三</td>
+                                <td>星期四</td>
+                                <td>星期五</td>
+                                <td>星期六</td>
+                                <td>星期日</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th>8:10</th>
+                                <td><div class="tag-style type-1">塑身瑜珈</div> 善琳老師</td>
+                                <td><div class="tag-style type-1">正位瑜珈</div> 傑生老師</td>
+                                <td><div class="tag-style type-1">律動瑜珈</div> 玉娟老師</td>
+                                <td><div class="tag-style type-1">多元瑜珈</div> 月美老師</td>
+                                <td><div class="tag-style type-1">經絡瑜珈</div> 善琳老師</td>
+                                <td><div class="tag-style type-6">初級瑜珈</div> 月美老師</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>9:00</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><div class="tag-style type-1">初級瑜珈</div> 值班老師</td>
+                            </tr>
+                            <tr>
+                                <th>9:30</th>
+                                <td><div class="tag-style type-7">療癒瑜珈90分鐘</div> 善琳老師</td>
+                                <td><div class="tag-style type-1">時尚有氧</div> 培翔老師</td>
+                                <td><div class="tag-style type-1">舒緩瑜珈</div> 善琳老師</td>
+                                <td><div class="tag-style type-1">養生瑜珈</div> 月美老師</td>
+                                <td><div class="tag-style type-1">初級瑜珈</div> 月美老師</td>
+                                <td><div class="tag-style type-1">律動瑜珈</div> 鳳娘老師</td>
+                                <td></td>
+                            </tr>
+                            <!-- <tr>
+                                <th>10:20</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><div class="tag-style type-1">初級瑜珈</div> 值班老師</td>
+                            </tr> -->
+                            <tr>
+                                <th>12:10</th>
+                                <td><div class="tag-style type-1">養生瑜珈</div> 月美老師</td>
+                                <td><div class="tag-style type-6">初級瑜珈</div> 文吟老師</td>
+                                <td><div class="tag-style type-1">多元瑜珈</div> 慧璇老師</td>
+                                <td><div class="tag-style type-6">初級瑜珈</div> 錦鳯老師</td>
+                                <td><div class="tag-style type-1">舒活瑜珈</div> 慧璇老師</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>14:30</th>
+                                <td><div class="tag-style type-1">塑身瑜珈</div> 月美老師</td>
+                                <td><div class="tag-style type-1">律動瑜珈</div> 瑄瑄老師</td>
+                                <td><div class="tag-style type-1">核心瑜珈</div> 芊芊老師</td>
+                                <td><div class="tag-style type-1">正位瑜珈</div> 傑生老師</td>
+                                <td><div class="tag-style type-6">初級瑜珈</div> 仙玲老師</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>17:30</th>
+                                <td><div class="tag-style type-6">初級瑜珈(10人)</div> 孟君老師</td>
+                                <td></td>
+                                <td><div class="tag-style type-6">初級瑜珈(10人)</div> 孟君老師</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>18:10</th>
+                                <td><div class="tag-style type-2">正位瑜珈</div> 傑生老師</td>
+                                <td><div class="tag-style type-6">初級瑜珈</div> 月美老師</td>
+                                <td><div class="tag-style type-13">有氧瑜珈</div> 慧燕老師</td>
+                                <td><div class="tag-style type-14">纖體瑜珈</div> 順英老師</td>
+                                <td><div class="tag-style type-13">活力瑜珈</div> 瑄瑄老師</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>19:30</th>
+                                <td><div class="tag-style type-6">初級瑜珈</div> 順英老師</td>
+                                <td><div class="tag-style type-1">多元瑜珈</div> 月美老師</td>
+                                <td><div class="tag-style type-7">療癒瑜珈90分鐘</div> 善琳老師</td>
+                                <td><div class="tag-style type-1">時尚瑜珈</div> 培翔老師</td>
+                                <td><div class="tag-style type-1">核心瑜珈</div> 芊芊老師</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--明誠館 PREV-->
+        <div class="row" id="mc-class-1p">
+            <div class="col-md-12">
+                <div class="asy-text-style">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span class="panel-title" style="font-size: 18px;">明誠館【十月】&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <a data-fancybox data-src="#hidden-content-b" href="javascript:;"><button class="btn btn-default btn-xs">上課公告</button></a>
+                            <div style="float: right">
+                                <div class="type-6" style="display: inline-block;border-radius: 20px; width: 10px; height: 10px; margin-top: 4px;"></div>&nbsp;較適合剛接觸瑜珈的會員&nbsp;&nbsp;
+                                <div class="type-1" style="display: inline-block;border-radius: 20px; width: 10px; height: 10px; margin-top: 4px;"></div>&nbsp;適合對瑜珈有經驗的會員&nbsp;&nbsp;
+                                <div class="type-7" style="display: inline-block;border-radius: 20px; width: 10px; height: 10px; margin-top: 4px;"></div>&nbsp;為90分鐘課程
+                            </div>
+                        </div>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>時間</th>
+                                <td>星期一</td>
+                                <td>星期二</td>
+                                <td>星期三</td>
+                                <td>星期四</td>
+                                <td>星期五</td>
+                                <td>星期六</td>
+                                <td>星期日</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th>8:20</th>
+                                <td><div class="tag-style type-1">伸展瑜珈</div> 鳳娘老師</td>
+                                <td><div class="tag-style type-1">律動瑜珈</div> 欣辰老師</td>
+                                <td><div class="tag-style type-1">多元瑜珈</div> 順英老師</td>
+                                <td><div class="tag-style type-1">伸展瑜珈</div> 玉婉老師</td>
+                                <td><div class="tag-style type-1">律動瑜珈</div> 欣辰老師</td>
+                                <td><div class="tag-style type-1">正位瑜珈</div> 傑生老師</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>9:30</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><div class="tag-style type-6">初級瑜珈</div> 值班老師</td>
+                            </tr>
+                            <tr>
+                                <th>9:40</th>
+                                <td><div class="tag-style type-1">多元瑜珈</div> 慧璇老師</td>
+                                <td><div class="tag-style type-1">氣功瑜珈</div> 善琳老師</td>
+                                <td><div class="tag-style type-1">時尚有氧</div> 培翔老師</td>
+                                <td><div class="tag-style type-7">療癒瑜珈90分鐘</div> 善琳老師</td>
+                                <td><div class="tag-style type-1">伸展瑜珈</div> 欣辰老師</td>
+                                <td><div class="tag-style type-7">修復瑜珈90分鐘</div> 善琳老師</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>14:30</th>
+                                <td><div class="tag-style type-1">纖體瑜珈</div> 寶玲老師</td>
+                                <td><div class="tag-style type-1">多元瑜珈</div> 上潔老師</td>
+                                <td><div class="tag-style type-1">舒活瑜珈</div> 慧璇老師</td>
+                                <td><div class="tag-style type-1">哈達瑜珈</div> 寶玲老師</td>
+                                <td><div class="tag-style type-6">初級瑜珈</div> 美君老師</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>18:10</th>
+                                <td><div class="tag-style type-1">律動瑜珈</div> 玉婉老師</td>
+                                <td><div class="tag-style type-1">哈達瑜珈</div> 順英老師</td>
+                                <td><div class="tag-style type-6">初級瑜珈</div> 寶玲老師</td>
+                                <td><div class="tag-style type-1">正位瑜珈</div> 傑生老師</td>
+                                <td><div class="tag-style type-1">多元瑜珈</div> 仙玲老師</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>19:30</th>
+                                <td><div class="tag-style type-1">律動瑜珈</div> 玉婉老師</td>
+                                <td><div class="tag-style type-1">舒緩瑜珈</div> 善琳老師</td>
+                                <td><div class="tag-style type-1">纖體瑜珈</div> 美君老師</td>
+                                <td><div class="tag-style type-1">多元瑜珈</div> 潔昕老師</td>
+                                <td><div class="tag-style type-7">療癒瑜珈90分鐘</div> 善琳老師</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>20:50</th>
+                                <td><div class="tag-style type-6">初級瑜珈</div> 潔昕老師</td>
+                                <td></td>
+                                <td></td>
+                                <td><div class="tag-style type-6">初級瑜珈</div> 惟菕老師</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Footer-->
+<div class="sy-footer-bg">
+    <div class="sy-footer">
+        <div class="sy-footer-text">
+            Copyright © 2017 Sunny Yoga Inc. All rights reserved<br>本網站由簡善琳瑜珈版權所有
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

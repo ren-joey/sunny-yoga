@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>簡善琳瑜珈會館 Sunny Yoga</title>
+    <link rel="icon" href="img/favicon.ico">
+
+    <!--jQuery-->
+    <script src="common/jquery-3.1.1.min.js"></script>
+
+    <!--jQueryColor-->
+    <script src="common/jquery.color.js"></script>
+
+    <!--Bootstrap-->
+    <link href="common/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="common/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <script src="common/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="common/bootstrap-3.3.7-dist/js/npm.js"></script>
+
+
+    <!--fancybox-->
+    <link href="common/fancybox-3.0/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+    <script src="common/fancybox-3.0/jquery.fancybox.min.js"></script>
+
+    <!--main-->
+
+    <style>
+        /*--global--*/
+        body , html{
+            font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+            background-color: #fcfcfc;
+        }
+
+        .hr-12{
+            width: 100%;
+            height: 12px;
+            clear: both;
+        }
+
+        .hr-30{
+            width: 100%;
+            height: 30px;
+            clear: both;
+        }
+        .mb-30{
+            margin-bottom: 30px;
+        }
+
+        a:hover{
+            text-decoration: none;
+        }
+
+        /*--header--*/
+        .header-bg{
+            background-color: #6a7ca4;
+            padding-top: 10px;
+        }
+        .header{
+            border-top: 1px solid #ffffff;
+            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+            background-color: #98acd1;
+            display: table;
+            width: 100%;
+        }
+        .brand-logo{
+            float: left;
+            line-height: 36px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .menu{
+            float: right;
+            display: table;
+        }
+        .side-left{
+            display: inline-block;
+            float: left;
+            margin-right: 5px ;
+        }
+        .side-right{
+            display: inline-block;
+            float: right;
+        }
+        .btn-icon{
+            line-height: 30px;
+            transition: all 1s;
+            transform: rotate(0deg);
+        }
+        .btn-icon.rotate-on{
+            transform: rotate(360deg);
+        }
+        .btn-icon-1{
+            background: url("img/icon-1.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .btn-icon-2{
+            background: url("img/icon-2.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .btn-icon-3{
+            background: url("img/icon-3.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .btn-icon-4{
+            background: url("img/icon-4.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .btn-icon-5{
+            background: url("img/icon-5.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .btn-icon-6{
+            background: url("img/icon-6.png") no-repeat;
+            width: 29px;
+            height: 29px;
+        }
+        .menu-btn{
+            font-size: 14px;
+            padding: 18px 10px;
+            color: #ffffff;
+            display: inline-table;
+            line-height: 15px;
+            cursor: pointer;
+        }
+        .menu-btn-en{
+            font-size: 10px;
+            -webkit-transform:scale(0.83);
+            color: #ffffff;
+            display: inline-block;
+            margin-left: -3px;
+        }
+
+        /*--AD--*/
+        .ad-area{
+            height: 200px;
+            background-position: center center;
+            background-size: cover;
+        }
+        .ad-1{
+            background-image: url("img/ad-1.jpg");
+        }
+        .ad-2{
+            background-image: url("img/ad-2.jpg");
+        }
+
+        /*--main container-*/
+        .container{
+            background-color: #ffffff;
+        }
+        .main-wrapper{
+            padding-top: 20px;
+        }
+        .title-tw{
+            color: #6a7ca4;
+            font-size: 16px;
+            line-height: 17px;
+            display: inline-block;
+            font-weight: 900;
+        }
+        .title-en{
+            font-size: 12px;
+            -webkit-transform:scale(0.83);
+            color: #6a7ca4;
+            display: inline-block;
+            font-weight: 900;
+        }
+
+        /*--about sunny yoga--*/
+
+        .asy-text-style{
+            font-size: 14px;
+            color: #6a7ca4;
+            line-height: 24px;
+        }
+
+        .asy-horiz-img{
+            background-image: url("img/asy-horiz.png");
+            background-position: right center;
+            background-repeat: no-repeat;
+            height: 36px;
+        }
+
+        /*--footer--*/
+        .sy-footer-bg{
+            background-color: #6a7ca4;
+            padding-bottom: 10px;
+        }
+        .sy-footer{
+            border-bottom: 1px solid #ffffff;
+            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+            background-color: #98acd1;
+            display: table;
+            width: 100%;
+            padding: 10px 0;
+        }
+        .sy-footer-text{
+            text-align: center;
+            color: #ffffff;
+            font-size: 12px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            transform: scale(0.87);
+        }
+
+        /*--style for fancybox--*/
+        .fancy-gallery{
+            display: flex; flex-direction: row; align-content:flex-start;flex-wrap: wrap;  width: 100%;
+        }
+
+        .fancy-item:first-child{
+            background-color: #98acd1;
+            padding: 15px 20px;
+        }
+
+        .fancy-item{
+            min-width: 200px;
+            max-width: 350px;
+            flex: 1;
+            overflow: hidden;
+            margin: 5px;
+            height: 150px;
+        }
+
+        .item-title{
+            font-size: 24px;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+            font-weight: 900;
+            color: #ffffff;
+        }
+
+        .item-contain{
+            font-size: 14px;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+            font-weight: 900;
+            color: #ffffff;
+        }
+
+        .fancy-item > img {
+            height: auto;
+            width: 100%;
+        }
+        
+        .display-none{
+            display: none;
+        }
+
+    </style>
+
+
+    <script>
+        function link_to(e){
+            var link_src = $(e).attr('datasrc');
+            $(location).attr('href',link_src);
+        }
+
+        $(function(){
+            $(' .marquee-text').animate({right:'1000px'},10000);
+
+            $(' .menu-btn').on({mouseenter:function(){
+                var this_icon = $(this).find('.btn-icon');
+                this_icon.addClass('rotate-on');
+            },mouseleave:function(){
+                var this_icon = $(this).find('.btn-icon');
+                this_icon.removeClass('rotate-on');
+            }});
+        });
+    </script>
+</head>
+<body>
+
+<!--header-->
+<div class="header-bg">
+    <div class="header">
+        <div class="brand-logo" style="padding-left: 50px; padding-top: 10px;" onclick="link_to(this)" datasrc="index.html">
+            <img width="auto" height="50" src="img/logo.jpg">
+        </div>
+        <div class="menu" style="padding-right: 50px;">
+
+            <div class="menu-btn" content="會館介紹" onclick="link_to(this);" datasrc="about.html">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-1"></div> </div>
+                </div>
+                <div class="side-right">
+                    會館介紹<br><div class="menu-btn-en">ABOUT</div>
+                </div>
+            </div>
+
+            <div class="menu-btn" content="認識瑜珈" onclick="link_to(this)" datasrc="visit_yoga.html">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-2"></div> </div>
+                </div>
+                <div class="side-right">
+                    認識瑜珈<br><div class="menu-btn-en">VISIT YOGA</div>
+                </div>
+            </div>
+
+            <div class="menu-btn" content="課程" onclick="link_to(this)" datasrc="class.html">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-3"></div> </div>
+                </div>
+                <div class="side-right">
+                    課程<br><div class="menu-btn-en">CLASS</div>
+                </div>
+            </div>
+
+            <div class="menu-btn" content="師資" onclick="link_to(this)" datasrc="teachers.html">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-4"></div> </div>
+                </div>
+                <div class="side-right">
+                    師資<br><div class="menu-btn-en">TEACHERS</div>
+                </div>
+            </div>
+
+            <div class="menu-btn" content="活動花絮" onclick="link_to(this)" datasrc="events.html" style="display: none;">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-5"></div> </div>
+                </div>
+                <div class="side-right">
+                    活動花絮<br><div class="menu-btn-en">EVENTS</div>
+                </div>
+            </div>
+
+            <div class="menu-btn" content="聯絡我們" onclick="link_to(this)" datasrc="contact.html">
+                <div class="side-left">
+                    <div class="btn-icon"><div class="btn-icon-6"></div> </div>
+                </div>
+                <div class="side-right">
+                    聯絡我們<br><div class="menu-btn-en">CONTACT</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--AD-->
+<div class="ad-area mb-30 ad-2"></div>
+
+<!--Main Contain-->
+<div class="container">
+    <div class="main-wrapper about-sunnyyoga">
+        <div class="row mb-30">
+            <div class="col-xs-3">
+                <div class="side-left">
+                    <img style="margin-right: 5px;" src="img/about-icon.png">
+                </div>
+                <div class="side-left">
+                    <div class="title-tw">會館介紹<br>
+                        <div class="title-en">About</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-9 asy-horiz-img" style="opacity: 0.5;"></div>
+        </div>
+
+        <div class="row mb-30">
+            <div class="col-md-12">
+                <div class="fancy-gallery">
+                    <a class="fancy-item">
+                       <span class="item-title">
+                           【民族館】
+                       </span><br>
+                        <span class="item-contain">
+                           位於南高雄，腹地200坪，館內設計為峇里島風格，擺設溫馨、綠意盎然。<br>
+                       </span>
+                    </a>
+                    <a class="fancy-item" href="img/sm_type/mj/mj_01.jpg" data-fancybox="images" data-caption="【民族館】會客接待區">
+                        <img src="img/sm_type/mj/mj_01.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/mj/mj_02.jpg" data-fancybox="images" data-caption="【民族館】會員休息區">
+                        <img src="img/sm_type/mj/mj_02.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/mj/mj_03.jpg" data-fancybox="images" data-caption="【民族館】會員健身房">
+                        <img src="img/sm_type/mj/mj_03.jpg" />
+                    </a>
+
+                    <a class="fancy-item display-none" href="img/sm_type/mj/mj_04.jpg" data-fancybox="images" data-caption="【民族館】大教室">
+                        <img src="img/sm_type/mj/mj_04.jpg" />
+                    </a>
+
+                    <a class="fancy-item display-none" href="img/sm_type/mj/mj_05.jpg" data-fancybox="images" data-caption="【民族館】第二教室">
+                        <img src="img/sm_type/mj/mj_05.jpg" />
+                    </a>
+
+                    <a class="fancy-item display-none" href="img/sm_type/mj/mj_06.jpg" data-fancybox="images" data-caption="【民族館】會員商品展示架">
+                        <img src="img/sm_type/mj/mj_06.jpg" />
+                    </a>
+
+                    <a class="fancy-item display-none" href="img/sm_type/mj/mj_07.jpg" data-fancybox="images" data-caption="【民族館】館內擺飾">
+                        <img src="img/sm_type/mj/mj_07.jpg" />
+                    </a>
+
+                    <a class="fancy-item display-none" href="img/sm_type/mj/mj_08.jpg" data-fancybox="images" data-caption="【民族館】館內擺飾">
+                        <img src="img/sm_type/mj/mj_08.jpg" />
+                    </a>
+
+                    <a class="fancy-item display-none" href="img/sm_type/mj/mj_09.jpg" data-fancybox="images" data-caption="【民族館】更衣室及洗手間">
+                        <img src="img/sm_type/mj/mj_09.jpg" />
+                    </a>
+
+                    <a class="fancy-item display-none" href="img/sm_type/mj/mj_10.jpg" data-fancybox="images" data-caption="【民族館】洗手間">
+                        <img src="img/sm_type/mj/mj_10.jpg" />
+                    </a>
+
+                    <a class="fancy-item display-none" href="img/sm_type/mj/mj_11.jpg" data-fancybox="images" data-caption="【民族館】會員休息區">
+                        <img src="img/sm_type/mj/mj_11.jpg" />
+                    </a>
+
+                    <a class="fancy-item display-none" href="img/sm_type/mj/mj_12.jpg" data-fancybox="images" data-caption="【民族館】大教室">
+                        <img src="img/sm_type/mj/mj_12.jpg" />
+                    </a>
+
+                    <a class="fancy-item display-none" href="img/sm_type/mj/mj_13.jpg" data-fancybox="images" data-caption="【民族館】第二教室">
+                        <img src="img/sm_type/mj/mj_13.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/mj/mj_14.jpg" data-fancybox="images" data-caption="【民族館】第二教室">
+                        <img src="img/sm_type/mj/mj_14.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/mj/mj_15.jpg" data-fancybox="images" data-caption="【民族館】第二教室">
+                        <img src="img/sm_type/mj/mj_15.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/mj/mj_16.jpg" data-fancybox="images" data-caption="【民族館】第二教室">
+                        <img src="img/sm_type/mj/mj_16.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/mj/mj_17.jpg" data-fancybox="images" data-caption="【民族館】第二教室">
+                        <img src="img/sm_type/mj/mj_17.jpg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-30">
+            <div class="col-md-12">
+                <div class="asy-text-style">
+                    位於南高雄占地200餘坪，全館走精緻峇厘島風格設計，寬敞空間堪稱南部第一。<br>
+                    踏入會館，迎面溫馨擺設、綠意盎然，讓您瞬間通體舒暢。學員交誼廳、書報閱覽室、懶人休息區、樂活健身房、蒸氣室、淋浴間、會員專屬更衣室、瑜珈精品展示區、大小教室等，多元化的會員空間，讓您上課之餘更是拓展人際關係及紓解身心的最佳場所。
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row mb-30">
+            <div class="col-md-12">
+                <div class="fancy-gallery">
+                    <a class="fancy-item">
+                       <span class="item-title">
+                           【明誠館】
+                       </span><br>
+                        <span class="item-contain">
+                           位於凹子底精華地段，簡善琳精緻瑜珈創始店，乃北高雄最大瑜珈會館。
+                       </span>
+                    </a>
+                    <a class="fancy-item" href="img/sm_type/mc/mc_01.jpg" data-fancybox="images" data-caption="【明誠館】運動空間">
+                        <img src="img/sm_type/mc/mc_01.jpg" />
+                    </a>
+
+                    <a class="fancy-item display-none" href="img/sm_type/mc/mc_02.jpg" data-fancybox="images" data-caption="【明誠館】休息區、飲水機及其他會員設施">
+                        <img src="img/sm_type/mc/mc_02.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/mc/mc_03.jpg" data-fancybox="images" data-caption="【明誠館】更衣室">
+                        <img src="img/sm_type/mc/mc_03.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/mc/mc_04.jpg" data-fancybox="images" data-caption="【明誠館】大教室課堂剪影">
+                        <img src="img/sm_type/mc/mc_04.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/mc/mc_05.jpg" data-fancybox="images" data-caption="【明誠館】大教室課堂剪影">
+                        <img src="img/sm_type/mc/mc_05.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/mc/mc_06.jpg" data-fancybox="images" data-caption="【明誠館】大廳">
+                        <img src="img/sm_type/mc/mc_06.jpg" />
+                    </a>
+
+                    <a class="fancy-item display-none" href="img/sm_type/mc/mc_07.jpg" data-fancybox="images" data-caption="【明誠館】會客接待區">
+                        <img src="img/sm_type/mc/mc_07.jpg" />
+                    </a>
+
+                    <a class="fancy-item" href="img/sm_type/mc/mc_08.jpg" data-fancybox="images" data-caption="【明誠館】會客接待區">
+                        <img src="img/sm_type/mc/mc_08.jpg" />
+                    </a>
+
+                    <a class="fancy-item display-none" href="img/sm_type/mc/mc_09.jpg" data-fancybox="images" data-caption="【明誠館】會員休息區">
+                        <img src="img/sm_type/mc/mc_09.jpg" />
+                    </a>
+
+                    <a class="fancy-item display-none" href="img/sm_type/mc/mc_10.jpg" data-fancybox="images" data-caption="【明誠館】服務台">
+                        <img src="img/sm_type/mc/mc_10.jpg" />
+                    </a>
+                </div>
+                <script>
+                    $(function(){
+                        $('[data-fancybox="images"]').fancybox({
+                            loop : false,
+                            thumbs : {
+                                showOnStart : true
+                            }
+                        })
+                    });
+                </script>
+            </div>
+        </div>
+
+        <div class="row mb-30">
+            <div class="col-md-12">
+                <div class="asy-text-style">
+                    位於北高雄25期凹子底重劃區，近明誠路與自由路精華地段，腹地約200坪，是大高雄地區第一家走精緻路線瑜珈會館，更是簡善琳瑜珈館的創始店。<br>
+                    館內採現代時髦風格清新亮麗、耳目一新，備有蒸氣室、淋浴間、交誼空間、書報閱覽區、健身運動區、學員專屬更衣室、瑜珈商品展示區、大教室與小教室等館內設施，乃北高雄最大的專業瑜珈會館。
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Footer-->
+<div class="sy-footer-bg">
+    <div class="sy-footer">
+        <div class="sy-footer-text">
+            Copyright © 2017 Sunny Yoga Inc. All rights reserved<br>本網站由簡善琳瑜珈版權所有
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
